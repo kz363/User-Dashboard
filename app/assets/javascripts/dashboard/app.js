@@ -18,6 +18,7 @@ $(function() {
         this.cacheElements();
         this.bindEvents();
         this.checkViewport();
+        this.bindLogin();
       },
 
       /**
@@ -70,6 +71,28 @@ $(function() {
         } else {
             this.$pageWrapper.removeClass("active");
         }
+      },
+
+      bindLogin: function() {
+        $("div.modal-body").on('submit', "form", function(e) {
+          e.preventDefault();
+          var login =
+          $.ajax({
+            url: "/login",
+            type: "POST",
+            data: $(this).serialize()
+          });
+          login.success(function(response) {
+            $("#loginModal").modal('hide');
+            $("div.meta.pull-right").remove();
+            $("div#content-wrapper").append(response.rows);
+            $("div.meta.pull-left").after(response.user);
+          });
+          login.fail(function(response) {
+            $("div.error").html("");
+            $("div.error").append(response.responseText);
+          })
+        });
       },
 
   };
