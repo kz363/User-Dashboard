@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 
 	def logout
 		reset_session
-		p session[:user_id]
 		redirect_to '/'
 	end
 end

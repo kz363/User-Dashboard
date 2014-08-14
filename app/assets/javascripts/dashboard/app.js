@@ -93,8 +93,7 @@ $(function() {
             $("div.error").append(response.responseText);
           })
         });
-      },
-
+      }
   };
 
   App.init();
