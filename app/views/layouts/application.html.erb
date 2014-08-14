@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>User Dashboard</title>
+  <title>User Dashboard</title>
 
   <!-- build:less lib/bootstrap/css/bootstrap.css -->
   <%= stylesheet_link_tag "bower_components/bootstrap/dist/css/bootstrap"%>  
@@ -19,33 +19,25 @@
   <!-- endbuild -->
 
   <!-- SCRIPTS -->
-  <!-- build:js lib/angular/angular.js -->
-  <%= javascript_include_tag "bower_components/angular/angular" %>
+  <!-- build:js lib/jquery/jquery.js -->
+  <%= javascript_include_tag "bower_components/jquery/dist/jquery" %>
   <!-- endbuild -->
-  <!-- build:js lib/angular-cookies/angular-cookies.js -->
-  <%= javascript_include_tag "bower_components/angular-cookies/angular-cookies" %>
+  <!-- build:js lib/bootstrap/dist/js/bootstrap.js -->
+  <%= javascript_include_tag "bower_components/bootstrap/dist/js/bootstrap" %>
   <!-- endbuild -->
-  <!-- build:js lib/angular-bootstrap/ui-bootstrap.js -->
-  <%= javascript_include_tag "bower_components/angular-bootstrap/ui-bootstrap" %>
-  <!-- endbuild -->
-  <!-- build:js lib/angular-bootstrap/ui-bootstrap-tpls.js -->
-  <%= javascript_include_tag "bower_components/angular-bootstrap/ui-bootstrap-tpls" %>
-  <!-- endbuild -->
-  <!-- build:js lib/angular-ui-router/angular-ui-router.js -->
-  <%= javascript_include_tag "bower_components/angular-ui-router/release/angular-ui-router" %>
+  <!-- build:js lib/jquery.cookie/jquery.cookie.js -->
+  <%= javascript_include_tag "bower_components/jquery.cookie/jquery.cookie" %>
   <!-- endbuild -->
 
   <!-- build:js js/dashboard.js -->
-  <%= javascript_include_tag "dashboard/module" %>
-  <%= javascript_include_tag "dashboard/routes" %>
-  <%= javascript_include_tag "dashboard/controllers/master-ctrl" %>
-  <%= javascript_include_tag "dashboard/controllers/alerts-ctrl" %>
-  <%= javascript_include_tag "dashboard/directives/loading" %>
+  <%= javascript_include_tag "dashboard/app" %>
   <!-- endbuild -->
   <!-- SCRIPTS -->
 
 </head>
+<body>
 
-<%= yield %>
+  <%= yield %>
 
+</body>
 </html>
