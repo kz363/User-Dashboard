@@ -7,40 +7,40 @@
 	<title>User Dashboard</title>
 
   <!-- build:less lib/bootstrap/css/bootstrap.css -->
-  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <%= stylesheet_link_tag "bower_components/bootstrap/dist/css/bootstrap"%>  
   <!-- endbuild -->
 
   <!-- build:css lib/font-awesome/css/font-awesome.css -->
-  <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.css">
+  <%= stylesheet_link_tag "bower_components/font-awesome/css/font-awesome"%>  
   <!-- endbuild -->
 
   <!-- build:less css/dashboard/dashboard.css -->
-  <link rel="stylesheet" type="text/css" href="stylesheets/dashboard.css">
+  <%= stylesheet_link_tag "dashboard"%>  
   <!-- endbuild -->
 
   <!-- SCRIPTS -->
   <!-- build:js lib/angular/angular.js -->
-  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <%= javascript_include_tag "bower_components/angular/angular" %>
   <!-- endbuild -->
   <!-- build:js lib/angular-cookies/angular-cookies.js -->
-  <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <%= javascript_include_tag "bower_components/angular-cookies/angular-cookies" %>
   <!-- endbuild -->
   <!-- build:js lib/angular-bootstrap/ui-bootstrap.js -->
-  <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+  <%= javascript_include_tag "bower_components/angular-bootstrap/ui-bootstrap" %>
   <!-- endbuild -->
   <!-- build:js lib/angular-bootstrap/ui-bootstrap-tpls.js -->
-  <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <%= javascript_include_tag "bower_components/angular-bootstrap/ui-bootstrap-tpls" %>
   <!-- endbuild -->
   <!-- build:js lib/angular-ui-router/angular-ui-router.js -->
-  <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <%= javascript_include_tag "bower_components/angular-ui-router/release/angular-ui-router" %>
   <!-- endbuild -->
 
   <!-- build:js js/dashboard.js -->
-  <script type="text/javascript" src="js/dashboard/module.js"></script>
-  <script type="text/javascript" src="js/dashboard/routes.js"></script>
-  <script type="text/javascript" src="js/dashboard/controllers/master-ctrl.js"></script>
-  <script type="text/javascript" src="js/dashboard/controllers/alerts-ctrl.js"></script>
-  <script type="text/javascript" src="js/dashboard/directives/loading.js"></script>
+  <%= javascript_include_tag "dashboard/module" %>
+  <%= javascript_include_tag "dashboard/routes" %>
+  <%= javascript_include_tag "dashboard/controllers/master-ctrl" %>
+  <%= javascript_include_tag "dashboard/controllers/alerts-ctrl" %>
+  <%= javascript_include_tag "dashboard/directives/loading" %>
   <!-- endbuild -->
   <!-- SCRIPTS -->
 
