@@ -1,14 +1,51 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" ng-app="Dashboard">
 <head>
-  <title>UserDashboard</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>User Dashboard</title>
+
+  <!-- build:less lib/bootstrap/css/bootstrap.css -->
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <!-- endbuild -->
+
+  <!-- build:css lib/font-awesome/css/font-awesome.css -->
+  <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.css">
+  <!-- endbuild -->
+
+  <!-- build:less css/dashboard/dashboard.css -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/dashboard.css">
+  <!-- endbuild -->
+
+  <!-- SCRIPTS -->
+  <!-- build:js lib/angular/angular.js -->
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <!-- endbuild -->
+  <!-- build:js lib/angular-cookies/angular-cookies.js -->
+  <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <!-- endbuild -->
+  <!-- build:js lib/angular-bootstrap/ui-bootstrap.js -->
+  <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+  <!-- endbuild -->
+  <!-- build:js lib/angular-bootstrap/ui-bootstrap-tpls.js -->
+  <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <!-- endbuild -->
+  <!-- build:js lib/angular-ui-router/angular-ui-router.js -->
+  <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js js/dashboard.js -->
+  <script type="text/javascript" src="js/dashboard/module.js"></script>
+  <script type="text/javascript" src="js/dashboard/routes.js"></script>
+  <script type="text/javascript" src="js/dashboard/controllers/master-ctrl.js"></script>
+  <script type="text/javascript" src="js/dashboard/controllers/alerts-ctrl.js"></script>
+  <script type="text/javascript" src="js/dashboard/directives/loading.js"></script>
+  <!-- endbuild -->
+  <!-- SCRIPTS -->
+
 </head>
-<body>
 
 <%= yield %>
 
-</body>
 </html>
