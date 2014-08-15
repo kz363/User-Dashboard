@@ -19,6 +19,7 @@ $(function() {
         this.bindEvents();
         this.checkViewport();
         this.bindLogin();
+        this.bindAlerts();
       },
 
       /**
@@ -92,6 +93,13 @@ $(function() {
             $("div.error").html("");
             $("div.error").append(response.responseText);
           })
+        });
+      },
+
+      bindAlerts: function() {
+        $("div.page-content").on('click', ".alert", function(e) {
+          e.preventDefault();
+          $(this).remove();
         });
       }
   };
