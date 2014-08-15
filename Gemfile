@@ -29,3 +29,4 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'geocoder'
+gem 'yahoo_weather' 

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
 	def index
-		puts request.location.inspect
+		@weather = weather(location) if session[:user_id]
 	end
 end

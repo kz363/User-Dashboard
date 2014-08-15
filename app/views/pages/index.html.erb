@@ -55,20 +55,20 @@
               Home / Dashboard
             </div>
           </div>
-          <div class="meta pull-right">
-            <div class="login" data-toggle="modal" data-target="#loginModal">Login</div>
-          </div>
+          <% if session[:user_id] %>
+            <%= render partial: "pages/user_info" %>
+          <% else %>
+            <div class="meta pull-right">
+              <div class="login" data-toggle="modal" data-target="#loginModal">Login</div>
+            </div>
+          <% end %>
         </div>
       </div>
       <!-- End Header Bar -->
       <!-- Main Content -->
-
-    
-<!--       <div class="row">
-
-
-      </div> -->
-
+      <% if session[:user_id] %>
+        <%= render partial: "pages/rows" %>
+      <% end %>
       <!-- End Main Content -->
     </div><!-- End Page Content -->
   </div><!-- End Content Wrapper -->

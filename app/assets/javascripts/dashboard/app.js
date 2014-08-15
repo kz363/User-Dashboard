@@ -85,7 +85,7 @@ $(function() {
           login.success(function(response) {
             $("#loginModal").modal('hide');
             $("div.meta.pull-right").remove();
-            $("div#content-wrapper").append(response.rows);
+            $("div.page-content").append(response.rows);
             $("div.meta.pull-left").after(response.user);
           });
           login.fail(function(response) {
