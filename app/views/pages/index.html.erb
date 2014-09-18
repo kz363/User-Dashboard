@@ -68,6 +68,8 @@
       <!-- Main Content -->
       <% if session[:user_id] %>
         <%= render partial: "pages/rows" %>
+      <% else %>
+        <%= render partial: "pages/user_agent" %>
       <% end %>
       <!-- End Main Content -->
     </div><!-- End Page Content -->
