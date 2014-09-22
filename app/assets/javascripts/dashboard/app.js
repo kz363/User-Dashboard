@@ -95,7 +95,7 @@ $(function() {
           login.fail(function(response) {
             $("div.error").html("");
             $("div.error").append(response.responseText);
-          })
+          });
         });
       },
 
@@ -107,27 +107,38 @@ $(function() {
       },
 
       appendUserInfo: function() {
-        $("div.user-agent").append("<h3>User Agent</h3><p>"+navigator.userAgent+"</p>");
+        var userAgent = navigator.userAgent;
+        var browser = userAgent.match(/(opera|chrome|safari|firefox|msie|trident)\/[^ ]*/i)[0].replace("/", " ");
+        var os = userAgent.match(/(Mac|Windows|Linux|Android|CPU|Blackberry) \w[^;)]*/i)[0];
+        var plugins = [];
+        for (var i = 0; i < navigator.plugins.length; i++) {
+          plugins.push( navigator.plugins[i].name + " - " + navigator.plugins[i].description );
+        }
+        $("div.user-agent").append("<h3>User Agent</h3><p>"+userAgent+"</p>");
+        $("div.user-agent").append("<h3>Browser</h3><p>"+browser+"</p>");
+        $("div.user-agent").append("<h3>Operating System</h3><p>"+os+"</p>");
         $("div.user-agent").append("<h3>Screen Resolution</h3><p>"+screen.width+"x"+screen.height+"</p>");
         $("div.user-agent").append("<h3>Window Size</h3><p>"+$(window).width()+"x"+$(window).height()+"</p>");
-        $("div.user-agent").append("<a class='speed-test'>Test Speed</a>");
+        $("div.user-agent").append("<h3>Plugins</h3><p>"+plugins.join("<br>")+"</p>");
+        $("div.user-agent").append("<a class='speed-test' href='#'>Test Speed</a>");
       },
 
       bindSpeedTest: function() {
         $("a.speed-test").on('click', function(e) {
           e.preventDefault();
           var past = new Date().getTime();
-          var login =
+          var test =
           $.ajax({
             url: "/speedtest",
             type: "GET"
           });
-          login.success(function(response) {
-            // console.log(response.getResponseHeader());
+          test.done(function(response) {
             $("a.speed-test").remove();
+            var size = parseInt(test.getResponseHeader('Content-Length'), 10) / 1000000; // B to MB
             var now = new Date().getTime();
-            console.log((now-past)/1000);
-            var speed = Math.round((100 / ((now - past) / 1000)) * 10) / 10 + " MB/s";
+            console.log((now-past)/1000 + 's');
+            // file size(MB) / download time (seconds)
+            var speed = Math.round((size / ((now - past) / 1000)) * 10) / 10 + " MB/s";
             $("div.user-agent").append("<h3>Bandwidth</h3><p>"+speed+"</p>");
           });
         });
